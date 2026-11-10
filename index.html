@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FAADJOU – Votre santé, à portée de main</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-10 -20 176.2 180.3'%3E%3Crect x='-10' y='-20' width='176.2' height='180.3' rx='30' fill='%23fff'/%3E%3Cg fill='%230757D8'%3E%3Cpath d='M156.2,74.6l-6.3,32.8h-50.3s-6.1,32.9-6.1,32.9h-33.1l8-41.2c2.7-13.3,14.1-23.4,27.7-24.6h60.2Z'/%3E%3Cpath d='M155.1,32.9l-6.1,32.9h-49.6c-4,.2-7.8.6-11.6,1.6-14.3,4-25.9,16.7-28.1,31.5H26.6l6-33.1H0l6.1-32.9h33.1S45.3,0,45.3,0h33.1l-6.3,32.9h83Z'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#0757D8; --blue-deep:#043a94; --blue-soft:#e8f0fd;
+  --bg:#ffffff; --surface:#f4f8ff; --text:#0b1f3f; --muted:#4a5d7c; --line:#d6e2f7;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#071226; --surface:#0d1d3a; --text:#eaf1ff; --muted:#a3b5d4; --line:#1b2f56; --blue-soft:#0d2652;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#071226; --surface:#0d1d3a; --text:#eaf1ff; --muted:#a3b5d4; --line:#1b2f56; --blue-soft:#0d2652;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+
+/* Hero */
+.hero{background:var(--blue);color:#fff;position:relative;overflow:hidden;padding:44px 0 92px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.04em;font-size:1.15rem}
+.brand .logo{height:38px;width:auto;flex:none}
+.hero h1{font-size:clamp(2rem,7.5vw,3.1rem);line-height:1.1;margin:36px 0 14px;font-weight:800;max-width:15ch}
+.hero p{margin:0;max-width:44ch;font-size:1.05rem;color:#dbe8ff}
+.ecg{position:absolute;left:0;right:0;bottom:22px;width:100%;height:70px;opacity:.9}
+.ecg path{fill:none;stroke:#fff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 2.8s ease-out .3s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion: reduce){.ecg path{animation:none;stroke-dashoffset:0}}
+
+/* Contact */
+.contact{margin-top:-52px;position:relative;z-index:2}
+.card{background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:8px;box-shadow:0 10px 30px rgba(7,87,216,.12)}
+.row{display:flex;align-items:center;gap:14px;padding:14px 12px;text-decoration:none;border-radius:14px}
+.row:hover,.row:focus-visible{background:var(--blue-soft)}
+.row:focus-visible,.btn:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.ico{width:44px;height:44px;border-radius:12px;background:var(--blue);display:grid;place-items:center;flex:none}
+.ico svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.row small{display:block;color:var(--muted);font-size:.78rem;font-weight:500}
+.row b{font-weight:700;font-size:1rem;word-break:break-word}
+.cta{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:8px 4px 4px}
+.btn{display:flex;justify-content:center;align-items:center;gap:8px;padding:14px;border-radius:14px;font-weight:700;text-decoration:none;font-size:.98rem}
+.btn.primary{background:var(--blue);color:#fff}
+.btn.ghost{background:var(--blue-soft);color:var(--blue)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn.ghost{color:#9cc2ff}}
+:root[data-theme="dark"] .btn.ghost{color:#9cc2ff}
+
+/* Sections */
+section{padding:56px 0 0}
+h2{font-size:1.55rem;line-height:1.2;margin:0 0 8px;font-weight:800}
+.lead{color:var(--muted);margin:0 0 24px;max-width:56ch}
+.services{display:grid;grid-template-columns:1fr;gap:12px}
+@media (min-width:560px){.services{grid-template-columns:1fr 1fr}}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;border-left:5px solid var(--blue)}
+.svc h3{margin:0 0 4px;font-size:1.02rem;font-weight:700}
+.svc p{margin:0;color:var(--muted);font-size:.92rem}
+.for{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.chip{background:var(--blue-soft);color:var(--blue);border-radius:999px;padding:7px 14px;font-weight:600;font-size:.88rem}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .chip{color:#9cc2ff}}
+:root[data-theme="dark"] .chip{color:#9cc2ff}
+.zone{background:var(--blue);color:#fff;border-radius:20px;padding:26px;margin-top:56px}
+.zone h2{margin-bottom:6px}
+.zone p{margin:0;color:#dbe8ff}
+footer{padding:44px 0 40px;text-align:center;color:var(--muted);font-size:.85rem}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="brand"><svg class="logo" viewBox="0 0 616.3 140.3" role="img" aria-label="Faadjou" fill="#fff"><path d="M156.2,74.6l-6.3,32.8h-50.3s-6.1,32.9-6.1,32.9h-33.1l8-41.2c2.7-13.3,14.1-23.4,27.7-24.6h60.2Z"/><path d="M155.1,32.9l-6.1,32.9h-49.6c-4,.2-7.8.6-11.6,1.6-14.3,4-25.9,16.7-28.1,31.5H26.6l6-33.1H0l6.1-32.9h33.1S45.3,0,45.3,0h33.1l-6.3,32.9h83Z"/><path d="M431.1,114.8c-1.4-.4-.5-6-.7-7.4-8.5,10.3-22.9,10.9-34,4.3-16.9-10.1-18.5-40.1-6.5-54.4,10.1-11.9,28.9-13.8,39.7-2,1.5.1.2-.5.2-.7v-30.4c0,0,.7-.7.7-.7h15.7c0,0,.7.7.7.7v89.8c0,0-.7.7-.7.7-2.9,0-13.3.6-15.2,0ZM412.1,62c-19.6,2.9-18.6,42.3,5.2,39.6,12.5-1.4,15.1-14.7,14-25.1-1.1-10.1-9.2-15.9-19.2-14.4Z"/><path d="M247.9,39.8h-43.2v22.6h37.8v14.7h-37.8v37.8h-17.2V24.1h59.6c0,0,.7.7.7.7v15Z"/><path d="M308.4,104.4c1.1,1.1,4.6.4,4.8.6.3.3.2,7.8,0,8.6-.3,1.4-4.3,2.1-5.7,2.2-7,.7-15.1-.9-15.5-9.3-9.1,14.7-42.7,12.1-44.6-6.6-2.5-24.4,20.8-21.5,36.9-24.9,3.4-.7,6.5-1.4,6.8-5.5.8-11.7-21.3-11.6-25.3-3.2-.6,1.3-.7,4.2-1.4,4.3-4.8-.4-10,.5-15,.1.9-21.6,25-26.7,42.3-21.4,23.1,7,13.6,34.1,15.6,52.1,0,.8.6,2.6,1.1,3ZM291.1,83.9c-6.4,1.8-13.3,1.9-19.7,3.6s-7.9,2.9-7.8,7.9c.2,9,13.4,8.9,19.4,6.1s8.2-6.4,8.2-10v-7.6Z"/><path d="M361.7,114.8l-2.2-7.4c-5.9,8.9-20.3,10-29.7,7.1-11.2-3.4-17-13.1-13.3-24.5,4.9-14.9,24.7-12.2,36.8-15.2,4.4-1.1,6.6-2.9,5.8-7.8-1.6-10-26.6-8.7-25.5,3.2l-15.7.5c1.3-18.8,17.4-24.4,34-23,33.3,2.8,21.1,37.4,23.4,60s1.6,4.6,2.4,7.1h-16.2ZM359.8,83.9c-6.1,2.3-22.4,1.8-26.2,6.9-3.7,4.9,0,11.4,5.9,12.2,13,1.8,21.7-5.8,20.3-19.1Z"/><path d="M510.8,47.8c23.4-2.3,39.9,13.9,38.4,37.4-3,43.9-72.1,40.7-68.2-7.3,1.3-16.2,13.7-28.5,29.8-30ZM511.7,61c-20.5,3-20.1,44.6,6.2,41.5,21.2-2.5,20.5-45.4-6.2-41.5Z"/><path d="M616.3,114.3h-16.2v-8.3c-1.7.8-2.4,2.7-3.7,3.9-11.1,10.1-32.6,7.5-38.2-7.4-.4-1-1.7-5.3-1.7-6.1v-46.8h15.5c.1,0,.4-.6.7-.5v41c0,1,1.1,4.6,1.7,5.7,4.4,8.1,18.3,7.3,22.9-.2.6-.9,2.4-5.2,2.4-6v-39.7c0,0,.7-.7.7-.7h15.2c0,0,.7.7.7.7v64.5Z"/><path d="M473.6,49.6v70.4c0,3.9-1.9,9.7-4.4,12.7s-7.9,5.7-11,5.7h-10.5v-13c2.9-1.4,6.1-.8,7.9-4.3s1.4-4,1.4-4.5V49.6h16.7Z"/></svg></div>
+    <h1>Votre santé, à portée de main.</h1>
+    <p>Faadjou est une plateforme de santé numérique au Sénégal. Elle vous relie à des praticiens, où que vous soyez.</p>
+  </div>
+  <svg class="ecg" viewBox="0 0 800 70" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 40 H250 L275 40 L292 12 L316 62 L338 24 L352 40 H520 L545 40 L562 16 L586 60 L606 28 L620 40 H800"/>
+  </svg>
+</header>
+
+<main class="wrap">
+  <div class="contact">
+    <div class="card">
+      <a class="row" href="tel:+221788640101">
+        <span class="ico"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+        <span><small>Téléphone</small><b>+221 78 864 01 01</b></span>
+      </a>
+      <a class="row" href="mailto:faadjou01@gmail.com">
+        <span class="ico"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+        <span><small>E-mail</small><b>faadjou01@gmail.com</b></span>
+      </a>
+      <a class="row" href="https://faadjou.com" target="_blank" rel="noopener">
+        <span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg></span>
+        <span><small>Site web</small><b>faadjou.com</b></span>
+      </a>
+      <a class="row" href="https://www.linkedin.com/company/faadjou" target="_blank" rel="noopener">
+        <span class="ico"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg></span>
+        <span><small>LinkedIn</small><b>Faadjou</b></span>
+      </a>
+      <div class="cta">
+        <a class="btn primary" href="tel:+221788640101">Appeler</a>
+        <a class="btn ghost" href="https://faadjou.com" target="_blank" rel="noopener">Ouvrir le site</a>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <h2>Nos services</h2>
+    <p class="lead">Des soins et un suivi adaptés à chaque étape de la vie, en ligne comme à domicile.</p>
+    <div class="services">
+      <div class="svc"><h3>Téléconsultation</h3><p>Consultez un praticien à distance, sans vous déplacer.</p></div>
+      <div class="svc"><h3>Consultation à domicile</h3><p>Un professionnel de santé vient chez vous.</p></div>
+      <div class="svc"><h3>Analyses biomédicales</h3><p>Examens et résultats, simplement organisés.</p></div>
+      <div class="svc"><h3>Santé mère-enfant</h3><p>Accompagnement des femmes enceintes et des enfants.</p></div>
+      <div class="svc"><h3>Santé mentale</h3><p>Une écoute et un suivi pour votre équilibre.</p></div>
+      <div class="svc"><h3>Maladies chroniques</h3><p>Diabète, hypertension, maladies cardiovasculaires.</p></div>
+      <div class="svc"><h3>Éducation à la santé</h3><p>Des conseils clairs pour prévenir plutôt que guérir.</p></div>
+      <div class="svc"><h3>Suivi personnalisé</h3><p>Un plan de soins construit pour vous.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Pour qui ?</h2>
+    <div class="for">
+      <span class="chip">Femmes enceintes</span><span class="chip">Patients chroniques</span><span class="chip">Personnes âgées</span><span class="chip">Familles</span><span class="chip">Zones rurales ou éloignées</span><span class="chip">Entreprises et mutuelles</span>
+    </div>
+  </section>
+
+  <div class="zone">
+    <h2>Partout au Sénégal</h2>
+    <p>Faadjou démarre à Dakar et s’étend progressivement à toutes les régions du pays.</p>
+  </div>
+</main>
+
+<footer>© FAADJOU · Santé numérique au Sénégal</footer>
+
+</body>
+</html>
